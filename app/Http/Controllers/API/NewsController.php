@@ -113,8 +113,8 @@ class NewsController extends Controller
         }
 
         $post->update($data);
-        if ($post) return ApiFormatter::createApi(200, 'success insert data', $data);
-        return ApiFormatter::createApi(500, 'failed insert data', $data);
+        if ($post) return ApiFormatter::createApi(200, 'success update data', $data);
+        return ApiFormatter::createApi(500, 'failed update data', $data);
     }
 
     /**
@@ -123,8 +123,11 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy($id)
     {
-        //
+        $post = News::findOrFail($id);
+        $post->delete();
+        if ($post) return ApiFormatter::createApi(200, 'success delete data');
+        return ApiFormatter::createApi(500, 'failed delete data');
     }
 }
