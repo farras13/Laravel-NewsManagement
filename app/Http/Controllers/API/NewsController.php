@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewsRequest;
+use App\Http\Requests\NewsupdRequest;
 use App\Models\News;
 use Illuminate\Http\Request;
 
@@ -88,9 +89,32 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(NewsupdRequest $request, $id)
     {
-        //
+        $data = [
+            'title' => $request->title,
+            'content' => $request->content,
+        ];
+
+        $post = News::findOrFail($id);
+
+        $file = $request->file('images');
+        $tujuan_upload = 'data_file';
+        // cek file
+        if(!empty($file)){
+            $image_path = public_path($tujuan_upload.'/'.$post->image);
+            if(file_exists($image_path)){
+                unlink($image_path);
+            }
+
+            $nama_file = time() . "_" . $file->getClientOriginalName();
+            $file->move($tujuan_upload, $nama_file);
+            $data['image'] = $nama_file;
+        }
+
+        $post->update($data);
+        if ($post) return ApiFormatter::createApi(200, 'success insert data', $data);
+        return ApiFormatter::createApi(500, 'failed insert data', $data);
     }
 
     /**
