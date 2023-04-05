@@ -33,7 +33,7 @@ php artisan queue:work
 - Mysqli extension
 - redis
 
-##Postman
+## Postman
 1. import jsd.postman_collection
 2. lakukan register dan login
 3. untuk menjalankan API pada folder news dan comment, tambahkan authorization bearer token dengan token yang didapat setelah login.
