@@ -6,6 +6,7 @@ use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewsRequest;
 use App\Http\Requests\NewsupdRequest;
+use App\Jobs\CommentJob;
 use App\Models\News;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $data = News::paginate(10);
+        $data = News::with('NewsComments')->paginate(10);
         if ($data) {
             return ApiFormatter::createApi(200, 'success', $data);
         } else {
@@ -66,9 +67,14 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show($id)
     {
-        //
+        $data = News::with('NewsComments')->find($id);
+        if ($data) {
+            return ApiFormatter::createApi(200, 'success', $data);
+        } else {
+            return ApiFormatter::createApi(400, 'failed');
+        }
     }
 
     /**
@@ -129,5 +135,16 @@ class NewsController extends Controller
         $post->delete();
         if ($post) return ApiFormatter::createApi(200, 'success delete data');
         return ApiFormatter::createApi(500, 'failed delete data');
+    }
+
+    public function comment(Request $request)
+    {
+        $data = [
+            'comment' => $request->comment,
+            'news_id' => $request->news_id,
+            'user_id' => auth()->user()->id
+        ];
+        CommentJob::dispatch($data)->delay(now()->addSeconds(60));
+        return ApiFormatter::createApi(200, 'Success create comment');
     }
 }

@@ -40,6 +40,7 @@ class UserController extends Controller
         }
 
         $input = $request->all();
+        $input['is_admin'] = empty($input['is_admin']) ? 0 : 1;
         $input['password'] = bcrypt($input['password']);
 
         $user = User::create($input);

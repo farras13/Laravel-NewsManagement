@@ -17,7 +17,7 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $auth = isset(auth()->user()->is_admin) == 1;
+        $auth = auth()->user()->is_admin == 1;
         if (!$auth) return ApiFormatter::createApi(500, "You don't have permission!");
         return $next($request);
     }

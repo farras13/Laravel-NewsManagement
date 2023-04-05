@@ -15,4 +15,9 @@ class News extends Model
         'content',
         'image',
     ];
+
+    public function NewsComments()
+    {
+        return $this->hasMany(NewsComments::class, 'news_id', 'id');
+    }
 }

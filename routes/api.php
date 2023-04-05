@@ -25,9 +25,12 @@ Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/login', [UserController::class, 'login'])->name('login');
 
 Route::middleware(['auth:api'])->group(function () {
+    Route::get('news', [NewsController::class, 'index']);
+    Route::get('news/{id}', [NewsController::class, 'show']);
+
     Route::middleware(['onlyAdmin'])->group(function () {
-        Route::apiResource('news', NewsController::class);
+        Route::apiResource('news', NewsController::class)->except(['index', 'show']);
         // Route::get('news', [NewsController::class, 'index']);
-        Route::post('news/comment', [NewsController::class, 'comment']);
     });
+    Route::post('news/comment', [NewsController::class, 'comment']);
 });
