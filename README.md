@@ -2,21 +2,21 @@
 
 ## Setup Project
 1. Clone repository project
-2. Setup environtment
-```
-cp .env.example .env
-```
-3. Generate an app encryption key
-```
-php artisan key:generate
-```
-4. Konfigurasi database pada .env sesuai dengan server yang digunakan.
-    4.1 ubah QUEUE_CONNECTION = async menjadi redis
-    4.2 tambahkan juga REDIS_CLIENT=predis dibawah REDIS_PORT
-5. Jalankan perintah composer
+2. Jalankan perintah composer
 ```
 composer install
 ```
+3. Setup environtment
+```
+cp .env.example .env
+```
+4. Generate an app encryption key
+```
+php artisan key:generate
+```
+5. Konfigurasi database pada .env sesuai dengan server yang digunakan.
+    5.1 ubah QUEUE_CONNECTION = async menjadi redis
+    5.2 tambahkan juga REDIS_CLIENT=predis dibawah REDIS_PORT
 6. lakukan migration
 ```
 php artisan migrate
