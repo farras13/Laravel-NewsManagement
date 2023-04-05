@@ -1,0 +1,456 @@
+{
+	"info": {
+		"_postman_id": "20093773-0807-4bc2-8945-74a9554ba55e",
+		"name": "jsd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "swag",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "swag@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "admin123",
+									"type": "text"
+								},
+								{
+									"key": "is_admin",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "admin jds",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "admin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "admin123",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "news",
+			"item": [
+				{
+					"name": "News All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNGFjZTdmYzExZjNjNmY2OGZlZThmYjZkYTgzNzM0ZGJlY2E0YTVmZmM3NjJjYTdiZWYzYTBhZGVkMWRjOTcwNTFkY2RkZjljOGZlN2ViYWYiLCJpYXQiOjE2ODA2NTUwNzQuMjIzOTE1LCJuYmYiOjE2ODA2NTUwNzQuMjIzOTIsImV4cCI6MTcxMjI3NzQ3NC4yMTE0MzgsInN1YiI6IjMiLCJzY29wZXMiOltdfQ.rNZ9Ubkxm2wAc4nn2VuA-GWgVqokfdmBzSlKDi1YJMF6J0zcMPHmQMIbZmx0o7BODC7kjuQUrkWgGetf-srfYbfANG2jk33lqm0ysS1ceN11wSdJjToqYDsqJ1wS-9zxMgJ0MYQDSqmTZxbCXD0RfSxjOB4-ajutQJvHUw9Ap9R7WEbeDa8NJj1eZhq5xt9NlNx-Yqv3y_oY8e-3nFYm7MBzU8C2DJBOM5_ahjn7C0Z6WnEeB_bmV6HclOrISEBhNzfEaSDeu__m5FelAyokxziWF3cpYHKVTEwy7mnKDKw04X9f8xTLUg05TzaJq_UEJ-3enpQRA9jF1XebRhGOME97qu2RusQuBKbHG_g97MzJlhPn_5qz0pwAXTmPNBmwV2Ajm_p14WYjnxfpWnysVDGM_yRtyt2hwDSXQBGBK2Dl8W-alY6GqtdNBD9X6Jpw2pfGRv5RC5r0OrnqvIomfm65-aDKdlKoz3jeTTo3EwIsHfb_FojcogdvR71JH0Bn7NAPv69_b5HXm9cgk4yP8ovX4RjatMPse1qbAZRw6pYuVZ2mbF9WO7oC5h5TrJtZ3KN-P3r04PN8oo6mN2FW4ZHf54NprO11ks5j3f63zpWoBXaWAYHjhU7SyNmiZEIHdIaqxhwagNVV7oEUMDdF5XKDjJG4g81EvhgqDYbfK1w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "admin jds",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "admin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "admin123",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/news",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDEwYWEzMzg5NmMzMzA3NTIwZmNjMTY0Y2Q0YjY4MjIwMDAwY2E5MzM5YTA1YjQ3YzljODUxMzA2ZThkYzRmZDAxNzY0OTFlYzQ2MzllNWEiLCJpYXQiOjE2ODA2NDMwMTUuMDExNDMzLCJuYmYiOjE2ODA2NDMwMTUuMDExNDM4LCJleHAiOjE3MTIyNjU0MTQuODg4NzY5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.2oexZAnJJTq3DnJZcCdoMHHJMsUOpY4FfBYlgkz0iDs9vPwpQs70KKrqU0VuNuOUa7vZ8FTUDUyJoEHEyPHaq_yVFzcPYvHZgjV7ijG52Qzq2xge7MG8Qfnn1o_18L8NiIrV0EPqt6q8NkDzYzRbX4oI_oRzPFH7jHv92K9Tj0rt4i_bk3AHGqsFlwphWsqxLt1-ZJ4GofI5BtxtSsGDcICF8lZgL0Gd77H3RorIFCk092wOERuPDon7TCUWgSDGusNiA2crHXBybZ_ssDtcC6zyzqlYSywQ0Y4Ant85TrnfsE0U_RRQAENzBvproz6vR1qbWXXl1Y5O9bkcxwuiU6MXpgepjbVSO4WZ4Seyw4gChWuYvexyoCqHapWBfM5Ro1_6H8URqNcq-xGYYf_2OjmhQbvCjQvCw39NOYncmokV5rGckg9OU7Uonw9qcQ5pBT9Ung2IUqGdF02L5_ZSa4RJ3eQCE3k163Tr_l3l4ibqASMpZaMu9MbJmP6Kxqa_m8VQAxjchpiXU4JlYiorgwzwoI4fgwl-6Kng4wPO1OL0okGOoU0RPPlBhMa1sBIJzH2AJ6RJmfwZGXKofaa1w-eClgy66RIgnQZ-z8Heoc8wGBxP-CQHKQlY-DAHkT5mpieD5uiQobJ_2t5wiDqDzT9t19r_4qgFtFqx7wrqTdI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "admin jds",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "admin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "admin123",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/news/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"news",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "news create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDEwYWEzMzg5NmMzMzA3NTIwZmNjMTY0Y2Q0YjY4MjIwMDAwY2E5MzM5YTA1YjQ3YzljODUxMzA2ZThkYzRmZDAxNzY0OTFlYzQ2MzllNWEiLCJpYXQiOjE2ODA2NDMwMTUuMDExNDMzLCJuYmYiOjE2ODA2NDMwMTUuMDExNDM4LCJleHAiOjE3MTIyNjU0MTQuODg4NzY5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.2oexZAnJJTq3DnJZcCdoMHHJMsUOpY4FfBYlgkz0iDs9vPwpQs70KKrqU0VuNuOUa7vZ8FTUDUyJoEHEyPHaq_yVFzcPYvHZgjV7ijG52Qzq2xge7MG8Qfnn1o_18L8NiIrV0EPqt6q8NkDzYzRbX4oI_oRzPFH7jHv92K9Tj0rt4i_bk3AHGqsFlwphWsqxLt1-ZJ4GofI5BtxtSsGDcICF8lZgL0Gd77H3RorIFCk092wOERuPDon7TCUWgSDGusNiA2crHXBybZ_ssDtcC6zyzqlYSywQ0Y4Ant85TrnfsE0U_RRQAENzBvproz6vR1qbWXXl1Y5O9bkcxwuiU6MXpgepjbVSO4WZ4Seyw4gChWuYvexyoCqHapWBfM5Ro1_6H8URqNcq-xGYYf_2OjmhQbvCjQvCw39NOYncmokV5rGckg9OU7Uonw9qcQ5pBT9Ung2IUqGdF02L5_ZSa4RJ3eQCE3k163Tr_l3l4ibqASMpZaMu9MbJmP6Kxqa_m8VQAxjchpiXU4JlYiorgwzwoI4fgwl-6Kng4wPO1OL0okGOoU0RPPlBhMa1sBIJzH2AJ6RJmfwZGXKofaa1w-eClgy66RIgnQZ-z8Heoc8wGBxP-CQHKQlY-DAHkT5mpieD5uiQobJ_2t5wiDqDzT9t19r_4qgFtFqx7wrqTdI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Berita Canda",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Konten",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/D:/Product-scaled_1000046899.jpg"
+								},
+								{
+									"key": "c_password",
+									"value": "admin123",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/news",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "news update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDEwYWEzMzg5NmMzMzA3NTIwZmNjMTY0Y2Q0YjY4MjIwMDAwY2E5MzM5YTA1YjQ3YzljODUxMzA2ZThkYzRmZDAxNzY0OTFlYzQ2MzllNWEiLCJpYXQiOjE2ODA2NDMwMTUuMDExNDMzLCJuYmYiOjE2ODA2NDMwMTUuMDExNDM4LCJleHAiOjE3MTIyNjU0MTQuODg4NzY5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.2oexZAnJJTq3DnJZcCdoMHHJMsUOpY4FfBYlgkz0iDs9vPwpQs70KKrqU0VuNuOUa7vZ8FTUDUyJoEHEyPHaq_yVFzcPYvHZgjV7ijG52Qzq2xge7MG8Qfnn1o_18L8NiIrV0EPqt6q8NkDzYzRbX4oI_oRzPFH7jHv92K9Tj0rt4i_bk3AHGqsFlwphWsqxLt1-ZJ4GofI5BtxtSsGDcICF8lZgL0Gd77H3RorIFCk092wOERuPDon7TCUWgSDGusNiA2crHXBybZ_ssDtcC6zyzqlYSywQ0Y4Ant85TrnfsE0U_RRQAENzBvproz6vR1qbWXXl1Y5O9bkcxwuiU6MXpgepjbVSO4WZ4Seyw4gChWuYvexyoCqHapWBfM5Ro1_6H8URqNcq-xGYYf_2OjmhQbvCjQvCw39NOYncmokV5rGckg9OU7Uonw9qcQ5pBT9Ung2IUqGdF02L5_ZSa4RJ3eQCE3k163Tr_l3l4ibqASMpZaMu9MbJmP6Kxqa_m8VQAxjchpiXU4JlYiorgwzwoI4fgwl-6Kng4wPO1OL0okGOoU0RPPlBhMa1sBIJzH2AJ6RJmfwZGXKofaa1w-eClgy66RIgnQZ-z8Heoc8wGBxP-CQHKQlY-DAHkT5mpieD5uiQobJ_2t5wiDqDzT9t19r_4qgFtFqx7wrqTdI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/news/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"news",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmQzNDQxNTM0ZjdlNGUxYWRjMDExMzIzYjY0NjUxMWViOWRiMDRjZmRmYmEwOWVlMzkyMTVlOWE4ZDZkYTg2ZTU0NDYyN2I0N2MyNjA2NGIiLCJpYXQiOjE2ODA2NTc1NjEuMTc4NTQ5LCJuYmYiOjE2ODA2NTc1NjEuMTc4NTU0LCJleHAiOjE3MTIyNzk5NjEuMTIxNDQ3LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.NDiPh8y9jhE-0mW3pvfVwqlyc9hYfM9A7ma2fegVeMg3BUII0ilMJK6mkzl1w4_ys-E7_lWHd5JH2KiWiVCmtpsX56FHt6QhbQoydC9W88xMuiEMqHOTikdkNpidPSYInjPe_JaRpi958XEXeJXPzuuviMxjKJT5QP3RmDC2nzM-LCKwMxzLmI8dVcqCF_q_PsYHO2ANU0Kor7RHcrCfiACEgZQz-wat5F1P1335KBo1ApusZuJVWNRDj2OzSntx0qa069kLR1IVqxxDIouvGPH0c5DQYBkQ0ew8ZOEkxUDaJKV4_eaaREe00NmQCwGoSPKv1x1l7Vskz1XvxIiykjQgyS7RrWXUwMcRgs-FnYCFF7AeJQolg-fI6PI-4rYI1-IH-IHRxwAueglOYL6BZbF7GDi65vM0nCiO0pDLQcb9CyZ9OwOED5NwrI7PvBpT-ssxuGsRi4htlLSohVVgrA_C5KEzMYQ6m-GZMvhGNd9Bih7569CyIzxFpd2pwCbAg5ONVG37ZjQyhRDRV3DMWgGNqo1r8aftL5gd8-mYVXCe3LLULGprBtudVlSZvxibdewl10cO7vqOYYPMKtiGN3UsPD8DGfTo1NG039ggnal0b6doilAnNetjFES0jTyCpbOTIcbROCQ40xqrJy8Jlh3wtx_WTZEayBGfpeuHkXg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/news/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"news",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDEwYWEzMzg5NmMzMzA3NTIwZmNjMTY0Y2Q0YjY4MjIwMDAwY2E5MzM5YTA1YjQ3YzljODUxMzA2ZThkYzRmZDAxNzY0OTFlYzQ2MzllNWEiLCJpYXQiOjE2ODA2NDMwMTUuMDExNDMzLCJuYmYiOjE2ODA2NDMwMTUuMDExNDM4LCJleHAiOjE3MTIyNjU0MTQuODg4NzY5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.2oexZAnJJTq3DnJZcCdoMHHJMsUOpY4FfBYlgkz0iDs9vPwpQs70KKrqU0VuNuOUa7vZ8FTUDUyJoEHEyPHaq_yVFzcPYvHZgjV7ijG52Qzq2xge7MG8Qfnn1o_18L8NiIrV0EPqt6q8NkDzYzRbX4oI_oRzPFH7jHv92K9Tj0rt4i_bk3AHGqsFlwphWsqxLt1-ZJ4GofI5BtxtSsGDcICF8lZgL0Gd77H3RorIFCk092wOERuPDon7TCUWgSDGusNiA2crHXBybZ_ssDtcC6zyzqlYSywQ0Y4Ant85TrnfsE0U_RRQAENzBvproz6vR1qbWXXl1Y5O9bkcxwuiU6MXpgepjbVSO4WZ4Seyw4gChWuYvexyoCqHapWBfM5Ro1_6H8URqNcq-xGYYf_2OjmhQbvCjQvCw39NOYncmokV5rGckg9OU7Uonw9qcQ5pBT9Ung2IUqGdF02L5_ZSa4RJ3eQCE3k163Tr_l3l4ibqASMpZaMu9MbJmP6Kxqa_m8VQAxjchpiXU4JlYiorgwzwoI4fgwl-6Kng4wPO1OL0okGOoU0RPPlBhMa1sBIJzH2AJ6RJmfwZGXKofaa1w-eClgy66RIgnQZ-z8Heoc8wGBxP-CQHKQlY-DAHkT5mpieD5uiQobJ_2t5wiDqDzT9t19r_4qgFtFqx7wrqTdI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "news_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "test comment",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "c_password",
+							"value": "admin123",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/news/comment",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"news",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
