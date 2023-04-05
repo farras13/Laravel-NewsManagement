@@ -6,22 +6,26 @@
 ```
 cp .env.example .env
 ```
-3. Konfigurasi database pada .env sesuai dengan server yang digunakan.
-    3.1 ubah QUEUE_CONNECTION = async menjadi redis
-    3.2 tambahkan juga REDIS_CLIENT=predis dibawah REDIS_PORT
-4. Jalankan perintah composer
+3. Generate an app encryption key
+```
+php artisan key:generate
+```
+4. Konfigurasi database pada .env sesuai dengan server yang digunakan.
+    4.1 ubah QUEUE_CONNECTION = async menjadi redis
+    4.2 tambahkan juga REDIS_CLIENT=predis dibawah REDIS_PORT
+5. Jalankan perintah composer
 ```
 composer install
 ```
-5. lakukan migration
+6. lakukan migration
 ```
 php artisan migrate
 ```
-6. Jalankan laravel nya
+7. Jalankan laravel nya
 ```
 php artsian serve
 ```
-7. jalankan redis nya
+8. jalankan redis nya
 ```
 php artisan queue:work
 ```
