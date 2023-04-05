@@ -15,17 +15,14 @@ composer install
 ```
 5. lakukan migration
 ```
-
 php artisan migrate
 ```
 6. Jalankan laravel nya
 ```
-
 php artsian serve
 ```
 7. jalankan redis nya
 ```
-
 php artisan queue:work
 ```
 ## Requirement
@@ -36,3 +33,7 @@ php artisan queue:work
 - Mysqli extension
 - redis
 
+##Postman
+1. import jsd.postman_collection
+2. lakukan register dan login
+3. untuk menjalankan API pada folder news dan comment, tambahkan authorization bearer token dengan token yang didapat setelah login.
